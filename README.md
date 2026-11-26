@@ -85,7 +85,7 @@ The dataset is used for educational and experimental machine learning purposes.
 ```text
 FraudShieldAI/
 │
-├── data/
+├── Data/
 │   └── creditcard.csv
 │
 ├── notebooks/
@@ -148,7 +148,7 @@ pip install -r requirements.txt
 
 ### 5. Prepare the dataset
 
-Place the original `creditcard.csv` file inside the `data/` directory.
+Place the original `creditcard.csv` file inside the `Data/` directory.
 
 ### 6. Run the application
 
