@@ -1,0 +1,28 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Dataset
+data/creditcard.csv
+data/creditcard_test_10000.csv
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# IDE files
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+# Keep all local datasets out of GitHub
+Data/

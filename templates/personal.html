@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personal Shield | FraudShield AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/personal.css') }}">
+</head>
+
+<body>
+
+    <div class="personal-container">
+
+        <!-- HEADER -->
+        <header class="personal-header">
+
+            <a href="/" class="back-link">← FraudShield AI</a>
+
+            <div class="personal-brand">
+                PERSONAL <span>SHIELD</span>
+            </div>
+
+            <div class="header-status">
+                <span class="status-dot"></span>
+                SAFETY CHECK
+            </div>
+
+        </header>
+
+        <main>
+
+            <!-- HERO -->
+            <section class="personal-hero">
+
+                <p class="eyebrow">YOUR TRANSACTION COMPANION</p>
+
+                <h1>
+                    Make every payment<br>
+                    <span>with more confidence.</span>
+                </h1>
+
+                <p>
+                    Answer a few questions about a transaction
+                    to identify common payment safety warning signs.
+                </p>
+
+            </section>
+
+
+            <!-- TRANSACTION SAFETY CHECK -->
+            <section class="sample-section">
+
+                <div class="section-heading">
+
+                    <p class="eyebrow">PERSONAL SECURITY / 001</p>
+
+                    <h2>Check your transaction.</h2>
+
+                    <p>
+                        Tell us about the payment. Never enter your
+                        card number, PIN, password or OTP here.
+                    </p>
+
+                </div>
+
+
+                <div class="sample-panel">
+
+                    <div class="sample-panel-heading">
+                        <h3>Transaction details</h3>
+                        <span>PRIVATE DEMONSTRATION</span>
+                    </div>
+
+
+                    <form id="transaction-check-form">
+
+                        <!-- AMOUNT -->
+                        <div class="safety-field">
+
+                            <label for="transaction-amount">
+                                1. What is the transaction amount?
+                            </label>
+
+                            <div class="amount-input-wrapper">
+                                <span>PKR</span>
+
+                                <input
+                                    type="number"
+                                    id="transaction-amount"
+                                    min="0"
+                                    step="0.01"
+                                    placeholder="Enter amount"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+
+                        <!-- PAYMENT METHOD -->
+                        <div class="safety-field">
+
+                            <label for="payment-method">
+                                2. How are you making this payment?
+                            </label>
+
+                            <select id="payment-method" required>
+                                <option value="">Choose payment method</option>
+                                <option value="online">Online / Website</option>
+                                <option value="pos">Card machine / In-store</option>
+                                <option value="transfer">Bank transfer</option>
+                                <option value="wallet">Digital wallet</option>
+                            </select>
+
+                        </div>
+
+
+                        <!-- MERCHANT -->
+                        <div class="safety-field">
+
+                            <label for="merchant-status">
+                                3. Do you recognize the merchant or recipient?
+                            </label>
+
+                            <select id="merchant-status" required>
+                                <option value="">Choose an answer</option>
+                                <option value="known">Yes, I recognize them</option>
+                                <option value="unknown">No, unfamiliar recipient</option>
+                                <option value="unsure">I'm not sure</option>
+                            </select>
+
+                        </div>
+
+
+                        <!-- USER INITIATED -->
+                        <div class="safety-field">
+
+                            <label for="payment-initiated">
+                                4. Did you initiate this payment yourself?
+                            </label>
+
+                            <select id="payment-initiated" required>
+                                <option value="">Choose an answer</option>
+                                <option value="yes">Yes, I initiated it</option>
+                                <option value="no">No, someone contacted me</option>
+                                <option value="unsure">I'm not sure</option>
+                            </select>
+
+                        </div>
+
+
+                        <!-- SENSITIVE INFORMATION -->
+                        <div class="safety-field">
+
+                            <label for="credential-request">
+                                5. Has anyone asked you to share sensitive information?
+                            </label>
+
+                            <select id="credential-request" required>
+                                <option value="">Choose an answer</option>
+                                <option value="no">No</option>
+                                <option value="otp">OTP or verification code</option>
+                                <option value="pin">Card PIN</option>
+                                <option value="password">Banking password</option>
+                                <option value="multiple">More than one of these</option>
+                            </select>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            id="analyze-btn"
+                            class="analyze-button">
+
+                            Check transaction safety →
+                        </button>
+
+                    </form>
+
+
+                    <!-- RESULT -->
+                    <div
+                        id="prediction-result"
+                        class="prediction-result"
+                        aria-live="polite"
+                        aria-atomic="true">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SAFETY NOTE -->
+            <section class="safety-note">
+
+                <span>✳</span>
+
+                <div>
+
+                    <h3>Important security reminder</h3>
+
+                    <p>
+                        Never share your OTP, PIN or banking password
+                        with anyone. This checklist identifies common
+                        warning signs using your answers. It does not
+                        access your bank account, verify merchants or
+                        guarantee that a transaction is safe.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="personal-footer">
+            FRAUDSHIELD AI · PERSONAL SHIELD
+        </footer>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/personal.js') }}"></script>
+
+</body>
+</html>

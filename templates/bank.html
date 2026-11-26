@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bank Intelligence | FraudShield AI</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/bank.css') }}">
+</head>
+
+<body>
+
+<div class="bank-container">
+
+    <!-- HEADER -->
+    <header class="bank-header">
+
+        <a href="/" class="back-link">← FraudShield AI</a>
+
+        <div class="bank-brand">
+            BANK <span>INTELLIGENCE</span>
+        </div>
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+            ANALYSIS READY
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="bank-hero">
+
+        <p class="eyebrow">INTELLIGENCE / ANALYST WORKSPACE</p>
+
+        <h1>
+            Investigate patterns.<br>
+            <span>Understand risk.</span>
+        </h1>
+
+        <p>
+            Examine transaction datasets, identify suspicious
+            activity and uncover potential fraud patterns
+            using machine learning.
+        </p>
+
+    </section>
+
+
+    <!-- INVESTIGATION OVERVIEW -->
+    <section class="analytics-section">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">ANALYTICS / 001</p>
+
+            <h2>Investigation overview</h2>
+
+            <p>
+                Results from transactions analyzed during
+                this session.
+            </p>
+
+        </div>
+
+
+        <div class="analytics-grid">
+
+            <div class="analytics-card">
+
+                <p>TRANSACTIONS ANALYZED</p>
+
+                <h3 id="total-transactions">0</h3>
+
+                <span>Total transactions evaluated</span>
+
+            </div>
+
+
+            <div class="analytics-card">
+
+                <p>POTENTIAL FRAUD</p>
+
+                <h3 id="fraud-count">0</h3>
+
+                <span>Flagged by the model</span>
+
+            </div>
+
+
+            <div class="analytics-card">
+
+                <p>LEGITIMATE CLASSIFICATIONS</p>
+
+                <h3 id="legitimate-count">0</h3>
+
+                <span>Not flagged by the model</span>
+
+            </div>
+
+
+            <div class="analytics-card">
+
+                <p>FLAGGED RATE</p>
+
+                <h3 id="fraud-rate">0%</h3>
+
+                <span>Flagged transactions / total analyzed</span>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- PRIMARY WORKSPACE: CSV BATCH ANALYSIS -->
+    <section class="batch-section" id="batch">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">PRIMARY WORKSPACE / 002</p>
+
+            <h2>Analyze transactions at scale.</h2>
+
+            <p>
+                Upload a structured transaction dataset to
+                screen multiple transactions in one analysis.
+            </p>
+
+        </div>
+
+
+        <div class="batch-panel">
+
+            <div class="upload-icon">↑</div>
+
+            <h3>Upload transaction dataset</h3>
+
+            <p>
+                Your CSV must contain Time, V1–V28 and Amount
+                columns. An optional Class column will not
+                be used to generate predictions.
+            </p>
+
+
+            <label for="csv-upload" class="upload-button">
+                Choose CSV file
+            </label>
+
+
+            <input
+                type="file"
+                id="csv-upload"
+                accept=".csv"
+                hidden
+            >
+
+
+            <p id="file-name" class="file-name">
+                No file selected
+            </p>
+
+
+            <button
+                type="button"
+                id="batch-analyze-btn"
+                class="bank-analyze-button"
+                disabled>
+
+                Analyze CSV →
+
+            </button>
+
+
+            <div
+                id="batch-result"
+                class="bank-result"
+                aria-live="polite">
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ADVANCED INDIVIDUAL INVESTIGATION -->
+    <section class="advanced-section" id="advanced-investigation">
+
+        <details class="advanced-details">
+
+            <summary class="advanced-summary">
+
+                <div class="advanced-summary-text">
+
+                    <p class="eyebrow">ADVANCED TOOLS / 003</p>
+
+                    <h2>Individual transaction investigation</h2>
+
+                    <p>
+                        Manually assess one transaction using
+                        the dataset's numerical model features.
+                    </p>
+
+                </div>
+
+                <span class="advanced-toggle" aria-hidden="true">
+                    +
+                </span>
+
+            </summary>
+
+
+            <!-- INDIVIDUAL INVESTIGATION FORM -->
+            <section class="investigation-section" id="individual">
+
+                <div class="investigation-panel">
+
+                    <div class="panel-heading">
+
+                        <h3>Transaction profile</h3>
+
+                        <span>TRANSACTION DETAILS</span>
+
+                    </div>
+
+
+                    <!-- BASIC TRANSACTION INPUTS -->
+                    <div class="bank-basic-inputs">
+
+                        <div class="input-group">
+
+                            <label for="bank-time">
+                                Transaction Time
+                            </label>
+
+                            <input
+                                type="number"
+                                id="bank-time"
+                                placeholder="Time in seconds"
+                                step="any"
+                                min="0"
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="bank-amount">
+                                Transaction Amount
+                            </label>
+
+                            <input
+                                type="number"
+                                id="bank-amount"
+                                placeholder="Enter amount"
+                                step="any"
+                                min="0"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PCA SIGNALS -->
+                    <div class="signals-heading">
+
+                        <h3>Transaction pattern signals</h3>
+
+                        <p>28 ANONYMIZED SIGNALS</p>
+
+                    </div>
+
+
+                    <p class="signal-explanation">
+                        These are 28 anonymized PCA-transformed
+                        numerical features from the original dataset.
+                        Their individual real-world meanings are unknown.
+                        Use values from a compatible dataset to generate
+                        a model prediction.
+                    </p>
+<!-- DATASET TEST SAMPLES -->
+
+<div class="test-samples-panel">
+
+    <div class="test-samples-heading">
+        <h3>Test with real dataset samples</h3>
+        <p>
+            Load an actual labeled transaction from the
+            original dataset for model testing.
+        </p>
+    </div>
+
+    <div class="test-samples-actions">
+
+        <button
+            type="button"
+            id="load-fraud-sample"
+            class="test-sample-button fraud-sample-button">
+
+            Load Confirmed Fraud Sample
+        </button>
+
+        <button
+            type="button"
+            id="load-legitimate-sample"
+            class="test-sample-button legitimate-sample-button">
+
+            Load Legitimate Sample
+        </button>
+
+    </div>
+
+    <p id="test-sample-status" aria-live="polite"></p>
+
+</div>
+
+                    <div
+                        class="bank-signals-grid"
+                        id="bank-signals-grid">
+
+                        <!-- JavaScript generates 28 pattern signals -->
+
+                    </div>
+
+
+                    <!-- ACTION BUTTONS -->
+                    <div class="investigation-actions">
+
+                        <button
+                            type="button"
+                            id="bank-analyze-btn"
+                            class="bank-analyze-button">
+
+                            Analyze transaction →
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="bank-reset-btn"
+                            class="bank-reset-button">
+
+                            Reset fields
+
+                        </button>
+
+                    </div>
+                    <!-- PREDICTION RESULT -->
+                    <div
+                        id="bank-prediction-result"
+                        class="bank-result"
+                        aria-live="polite">
+                    </div>
+
+                </div>
+
+            </section>
+
+        </details>
+
+    </section>
+    <!-- FRAUD CONSTELLATION -->
+    <section class="constellation-section" id="constellation">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">PATTERN DISCOVERY / 004</p>
+
+            <h2>Fraud constellation</h2>
+
+            <p>
+                Explore the classification patterns of transactions
+                analyzed during this session.
+            </p>
+
+        </div>
+
+
+        <div class="constellation-panel">
+
+            <div
+                class="constellation-visual"
+                id="constellation-visual">
+
+                <div
+                    class="constellation-empty"
+                    id="constellation-empty">
+
+                    <span class="empty-orb">AI</span>
+
+                    <h3>Awaiting transaction signals</h3>
+
+                    <p>
+                        Analyze transactions to populate your
+                        constellation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="constellation-caption">
+
+                <p class="eyebrow">LIVE SESSION VISUALIZATION</p>
+
+                <h3>Every transaction leaves a signal.</h3>
+
+                <p>
+                    Each node represents an analyzed transaction.
+                    Node colors indicate the model's classification.
+                </p>
+
+
+                <div class="constellation-stats">
+
+                    <div>
+
+                        <span id="constellation-total">0</span>
+
+                        <p>TRANSACTION NODES</p>
+
+                    </div>
+
+
+                    <div>
+
+                        <span id="constellation-flagged">0</span>
+
+                        <p>FLAGGED NODES</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="constellation-legend">
+
+                    <div>
+
+                        <span class="legend-dot legitimate-dot"></span>
+
+                        Legitimate classification
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="legend-dot fraud-dot"></span>
+
+                        Potential fraud
+
+                    </div>
+
+                </div>
+
+
+                <p class="constellation-note">
+                    Visual connections are decorative and do not
+                    represent proven relationships between transactions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- DISCLAIMER -->
+    <section class="bank-disclaimer">
+
+        <span>✳</span>
+
+        <p>
+            FraudShield AI is an educational machine learning
+            prototype. It is not connected to a bank or
+            real-time financial transaction network.
+            Model classifications are predictions, not
+            confirmed fraud findings.
+        </p>
+
+    </section>
+    <!-- FOOTER -->
+    <footer class="bank-footer">
+
+        FRAUDSHIELD AI · BANK INTELLIGENCE
+
+    </footer>
+
+</div>
+<!-- JAVASCRIPT -->
+<script src="{{ url_for('static', filename='js/bank.js') }}"></script>
+</body>
+</html>

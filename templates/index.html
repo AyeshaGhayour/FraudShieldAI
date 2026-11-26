@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FraudShield AI | Dual Intelligence System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- HEADER -->
+    <header class="main-header">
+
+        <div class="brand">
+            <div class="brand-symbol">F.</div>
+
+            <div class="brand-name">
+                <h2>FraudShield<span>AI</span></h2>
+                <p>DUAL INTELLIGENCE SYSTEM</p>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <a href="#overview">Overview</a>
+            <a href="#workspaces">Workspaces</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="system-status">
+            <span class="status-dot"></span>
+            AI ENGINE READY
+        </div>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="overview">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                INTELLIGENCE / FINANCIAL SECURITY
+            </p>
+
+            <h1>
+                See beyond<br>
+                the <span>transaction.</span>
+            </h1>
+
+            <p class="hero-description">
+                Every transaction carries a pattern.
+                FraudShield AI uses machine learning to
+                identify suspicious activity and make
+                financial security more intelligent.
+            </p>
+
+            <a href="#workspaces" class="explore-link">
+                Discover your workspace →
+            </a>
+
+        </div>
+
+        <!-- ORIGINAL ORBITAL ARTWORK -->
+        <div class="hero-art">
+
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit orbit-three"></div>
+
+            <div class="orbit-center">F</div>
+
+            <span class="orbit-label">
+                INTELLIGENCE / 001
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- WORKSPACE SELECTION -->
+    <section class="workspace-section" id="workspaces">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">
+                CHOOSE YOUR EXPERIENCE / 002
+            </p>
+
+            <h2>
+                Intelligence with<br>
+                <span>two perspectives.</span>
+            </h2>
+
+            <p>
+                Whether you're checking a personal transaction
+                or investigating financial activity at scale,
+                choose the workspace designed for your needs.
+            </p>
+
+        </div>
+
+
+        <!-- TWO WORKSPACE CARDS -->
+        <div class="workspace-grid">
+
+
+            <!-- PERSONAL SHIELD -->
+            <article class="workspace-card personal-card">
+
+                <div class="workspace-top">
+                    <span class="workspace-number">
+                        EXPERIENCE / 01
+                    </span>
+
+                    <span class="workspace-icon">
+                        ◈
+                    </span>
+                </div>
+
+                <div class="workspace-illustration personal-art">
+                    <div class="personal-circle">
+                        <span>01</span>
+                    </div>
+
+                    <div class="personal-decoration decoration-one"></div>
+                    <div class="personal-decoration decoration-two"></div>
+                </div>
+
+                <p class="workspace-category">
+                    FOR CARDHOLDERS
+                </p>
+
+                <h3>Personal Shield</h3>
+
+                <p class="workspace-description">
+                    A simpler way to explore transaction
+                    safety. Check sample transactions,
+                    understand fraud risk and discover
+                    what suspicious activity looks like.
+                </p>
+
+                <ul class="workspace-features">
+                    <li>Easy-to-understand risk results</li>
+                    <li>Transaction safety insights</li>
+                </ul>
+
+                <button
+                    class="workspace-button personal-button"
+                    id="personal-mode-btn"
+                    data-mode="personal"
+                    type="button">
+
+                    Enter Personal Shield
+                    <span>→</span>
+
+                </button>
+
+            </article>
+
+
+            <!-- BANK INTELLIGENCE -->
+            <article class="workspace-card bank-card">
+
+                <div class="workspace-top">
+                    <span class="workspace-number">
+                        EXPERIENCE / 02
+                    </span>
+
+                    <span class="workspace-icon">
+                        ⌘
+                    </span>
+                </div>
+
+                <div class="workspace-illustration bank-art">
+
+                    <div class="bank-grid"></div>
+
+                    <div class="bank-node node-one"></div>
+                    <div class="bank-node node-two"></div>
+                    <div class="bank-node node-three"></div>
+                    <div class="bank-node node-four"></div>
+                    <div class="bank-node node-five"></div>
+
+                    <div class="bank-center">
+                        AI
+                    </div>
+
+                </div>
+
+                <p class="workspace-category">
+                    FOR BANK ANALYSTS
+                </p>
+
+                <h3>Bank Intelligence</h3>
+
+                <p class="workspace-description">
+                    An advanced investigation environment
+                    for analyzing transaction patterns,
+                    reviewing suspicious activity and
+                    exploring fraud analytics.
+                </p>
+
+                <ul class="workspace-features">
+                    <li>Individual and batch analysis</li>
+                    <li>Advanced fraud analytics</li>
+                    <li>Transaction pattern investigation</li>
+                </ul>
+
+                <button
+                    class="workspace-button bank-button"
+                    id="bank-mode-btn"
+                    data-mode="bank"
+                    type="button">
+
+                    Enter Bank Intelligence
+                    <span>→</span>
+
+                </button>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT / MODEL INFORMATION -->
+    <section class="about-section" id="about">
+
+        <div class="about-heading">
+
+            <p class="eyebrow">
+                THE TECHNOLOGY / 003
+            </p>
+
+            <h2>
+                One intelligence.<br>
+                <span>Multiple possibilities.</span>
+            </h2>
+
+        </div>
+
+        <div class="about-content">
+
+            <div class="about-description">
+                <p>
+                    FraudShield AI is powered by a trained
+                    Random Forest machine learning model
+                    designed to identify patterns associated
+                    with fraudulent credit card transactions.
+                </p>
+
+                <p>
+                    Both workspaces use the same prediction
+                    engine while offering different experiences
+                    for different users.
+                </p>
+            </div>
+
+            <div class="technology-note">
+                <span class="technology-symbol">✳</span>
+
+                <div>
+                    <h4>Built on machine learning</h4>
+
+                    <p>
+                        A data-driven approach to transaction
+                        analysis, fraud detection and risk
+                        investigation.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+
+        <div class="footer-brand">
+            FraudShield<span>AI</span>
+        </div>
+
+        <p>
+            TRANSACTION INTELLIGENCE · FINANCIAL SECURITY
+        </p>
+
+        <span class="footer-copy">
+            Machine Learning Project
+        </span>
+
+    </footer>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
